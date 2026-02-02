@@ -1,0 +1,225 @@
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  /* padding: 2rem; */
+  text-align: center;
+}
+
+.logo {
+  /* height: 10em;
+  width: 20; */
+  padding: 0.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo img {
+  height: 48px;
+  width: 162px;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+.navbar-gradient {
+  background: linear-gradient(90deg, #fdf6ee 0%, #f9f7f3 100%);
+  border-radius: 1rem 1rem 1rem 1rem;
+}
+
+/* Set page background to white */
+body {
+  background-color: #ffffff;
+}
+
+/* Reusable golden card style */
+.gold-card {
+  background: #fdf6e3;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px rgba(17, 24, 39, 0.08);
+}
+
+.chev-down {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #bfa76f;
+}
+
+/* Smooth scroll for in-page anchors */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scroll prompt arrow animation */
+.scroll-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  background: rgba(191, 167, 111, 0.08);
+  color: #bfa76f;
+  box-shadow: 0 6px 18px rgba(11, 20, 30, 0.06);
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease;
+  animation: scroll-bob 1.6s infinite;
+}
+
+/* three arrows stack */
+.three-arrows {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+.three-arrows .arrow {
+  color: #bfa76f;
+  opacity: 0.95;
+  transform-origin: center;
+  animation: arrow-drop 1.2s infinite;
+}
+.three-arrows .arrow:nth-child(1) {
+  animation-delay: 0s;
+}
+.three-arrows .arrow:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.three-arrows .arrow:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* swipe indicator */
+.swipe-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.swipe-body {
+  width: 36px;
+  height: 56px;
+  border-radius: 20px;
+  border: 2px solid rgba(191, 167, 111, 0.25);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 8px;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 6px 18px rgba(11, 20, 30, 0.06);
+}
+.swipe-dot {
+  width: 8px;
+  height: 8px;
+  background: #bfa76f;
+  border-radius: 9999px;
+  animation: swipe-down 1.4s infinite;
+}
+@keyframes swipe-down {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  40% {
+    transform: translateY(18px);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes arrow-drop {
+  0% {
+    transform: translateY(-4px);
+    opacity: 0;
+  }
+  40% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(6px);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+.scroll-arrow:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 24px rgba(11, 20, 30, 0.12);
+}
+
+@keyframes scroll-bob {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* custom cursor */
+.custom-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: rgba(191, 167, 111, 0.95);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition:
+    background-color 120ms ease,
+    transform 120ms ease,
+    opacity 200ms ease;
+  z-index: 9999;
+  mix-blend-mode: normal;
+}
+
+@media (max-width: 768px) {
+  .custom-cursor {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .custom-cursor {
+    display: none;
+  }
+}
